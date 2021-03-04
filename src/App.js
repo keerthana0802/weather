@@ -36,7 +36,7 @@ class App extends Component {
         cityInput: city, countryInput: country
       });
     //handle case: if user enter incorrect country value
-    //UX: add error message
+    
     } else {
       console.log(':(')
       this.setState({
@@ -94,9 +94,7 @@ class App extends Component {
           incorrctCountryNameError: undefined,
           displayComponent: true
         });
-        // handle case: user enter incorrect location
-        // simulate case: enter wrong locations
-        //UX: add error message
+        
        } else if (response.cod === "404") {
           this.setState({
             error : `!Error: ${response.message}, please check location inputs again`,
@@ -114,10 +112,7 @@ class App extends Component {
            });
 
         } else {
-        // handle case: if invalid API openweathermap key (Unauthorized error)
-        // if (response.cod === "401")
-        // simulate case: delete from API key
-        //UX: add error message
+        
           this.setState({
             error : `!Error: ${response.message} `,
             incorrctCountryNameError: undefined,
@@ -135,10 +130,7 @@ class App extends Component {
           
         }
 
-    //handle case: if fetch request fails due to network issues or fetched url incorrect
-    // User is offline, DNS troubles, network errors
-    // simulate case: disconnect internet or delete anything from fetched url
-    //UX: add error message
+    
     } catch (error) {
       this.setState({
         cityInput: undefined,
